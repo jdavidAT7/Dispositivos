@@ -7,8 +7,7 @@ import java.util.List;
 
 public class Administracion {
     
-    private static final String ARCHIVO_ADMINISTRACIONES = "./administracion.csv";
-    
+    private static final String ARCHIVO_ADMINISTRACIONES = "./administracion.csv"; 
     
     private String tipoDispositivo;
     private String nombreDispositivo;
