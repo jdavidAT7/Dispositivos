@@ -1,0 +1,7 @@
+notificación,nombre del equipo,asunto de correo,nombre del evento,fecha,hora
+correo electrónico,cp_new_01,Prueba correo electronico 1,
+correo electrónico,t_01,Prueba correo electronico 2,
+correo electrónico,s_02,Prueba correo electronico 3,
+evento de calendario,sw_02,,Evento de Prueba 1,03/02/2021,12:00:00
+evento de calendario,cp_02,,Evento de Prueba 2,05/04/2021,13:30:00
+evento de calendario,t_02,,Evento de Prueba 3,05/05/2021,07:15:00

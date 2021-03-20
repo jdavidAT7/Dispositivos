@@ -1,0 +1,19 @@
+tipo de dispositivo,nombre de dispositivo,acción,dispositivo destino
+computadora portatil,cp_new_01,tomar fotografía,
+computadora portatil,cp_new_01,copiar texto,
+tablet,t_02,pegar texto,
+tablet,t_02,copiar texto,
+computadora portatil,cp_new_01,pegar texto,
+computadora portatil,cp_new_01,compartir documentos,t_02
+computadora portatil,cp_new_01,reproducir música,
+tablet,t_02,tomar fotografía,
+tablet,t_02,compartir documentos,cp_new_01
+tablet,t_02,reproducir música,
+smartwatch,sw_02,tomar fotografía,
+smartwatch,sw_02,copiar texto,
+smartphone,s_01,pegar texto,
+smartwatch,sw_02,reproducir música,
+smartphone,s_01,tomar fotografía,
+smartphone,s_01,copiar texto,
+smartphone,s_01,compartir documentos,cp_new_01
+smartphone,s_01,reproducir música,

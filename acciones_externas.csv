@@ -1,0 +1,6 @@
+accion,número de teléfono,nombre de dispositivo,tipo acción,texto de mensaje,nombre de app/red social, remitente de mensaje
+llamada telefónica,5555-0001,,,,,
+mensaje,,cp_new_01,mensaje de texto,Mensaje de texto para dispositivo cp_new_01,,
+mensaje,,t_01,mensaje de red social,Mensaje de red social para dispositivo t_01,Facebook,
+mensaje,,sw_01,mensajería instantanea,Mensaje de app de mensajería instantánea,WhatsApp,Pedro Perez
+mensaje,,s_01,mensaje de videoconferencia,Mensaje de videoconferencia,Zoom,Pablo Marmol

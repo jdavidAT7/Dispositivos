@@ -1,0 +1,11 @@
+tipo de dispositivo, nombre de dispositivo, campo a editar, nuevo valor
+computadora portatil,cp_01,nombre,cp_new_01
+tablet,t_01,correo electrónico,new_testmail@correo.com
+smartphone,s_01,visible,falso
+smartwatch,sw_01,encender,falso
+auriculares,a_01,eliminar sincronización,verdadero
+smartwatch,s_01,encender,verdadero
+tablet,t_02,Correo Electronico,mejorcorreo@gmail.com
+smartwatch,sw_01,Nombre del Dispositivo,mi watch
+
+tablet,t_01,Correo Electronico,mono@gmail.com
