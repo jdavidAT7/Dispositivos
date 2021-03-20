@@ -28,6 +28,7 @@ public class Ejecutar {
     private static final String EDITARCORREO = "Correo Electronico";
     private static final String EDITARNOMBRE = "Nombre del Dispositivo";
     private static final String VISIBILDIDAD = "Visibilidad del Dispositivo";
+    private static final String ELIMINARCONEX = "Eliminacion de Sincronizacion";
 
     private static final int COMPUTADORAS = 1;
     private static final int TABLETS = 2;
@@ -525,6 +526,68 @@ public class Ejecutar {
                                 
                                 administraciones.add(new Administracion(adminDispositivo02, 
                                         adminNombre02, campoEditar02, nuevoValor02));                                
+                                Administracion.actualizar(administraciones);
+
+                                break;
+                            
+                            case AURICULARES:
+
+                                System.out.println();
+                                System.out.println("--- ELIMINAR DISPOSITIVO SINCRONIZADO  ---\n");
+                                
+
+                                System.out.println("Listado de Dispositivos\n");
+
+                                Dispositivos.listarAuriculares();
+
+                                int noregistro03 = capturarNumeroEntero("Digite un numero de dispositivo para eliminar");
+
+                                List<Dispositivos> dispositivos03 = new ArrayList<>(); // Lista donde guardaremos los datos del archivo
+
+                                CsvReader leerDispositivos03 = new CsvReader(ARCHIVO_DISPOSITIVOS);
+                                leerDispositivos03.readHeaders();
+
+                                // Mientras haya lineas obtenemos los datos del archivo
+                                while (leerDispositivos03.readRecord()) {
+                                    String tipoDispositivo = leerDispositivos03.get(0);
+                                    String noTelefono = leerDispositivos03.get(1);
+                                    String dispoAsociado = leerDispositivos03.get(2);
+                                    String email = leerDispositivos03.get(3);
+                                    String nombreDispositivo = leerDispositivos03.get(4);
+                                    String visible = leerDispositivos03.get(5);
+
+                                    dispositivos03.add(new Dispositivos(tipoDispositivo, noTelefono,
+                                            dispoAsociado, email, nombreDispositivo, visible)); // Añade la informacion a la lista
+                                }
+
+                                leerDispositivos03.close(); // Cierra el archivo
+                                
+                                String adminDispositivo03 = null;
+                                String adminNombre03 = null;
+                                String campoEditar03 = ELIMINARCONEX;
+                                String nuevoValor03 = "ninguno";
+                                
+                                
+                                int contador03 = 0;
+                                // Recorremos la lista y la mostramos en la pantalla
+                                for (Dispositivos dispo : dispositivos03) {
+                                    contador03++;
+
+                                    if (contador03 == noregistro03) {
+                                        
+                                        adminDispositivo03 = dispo.getTipoDispositivo();
+                                        adminNombre03 = dispo.getNombreDispositivo();  
+                                        
+                                        dispositvos.remove(dispo);
+
+                                    }
+                                }
+
+                               //dispositvos.add(new Dispositivos(nuevoValor02));                                
+                                //Dispositivos.creaCompuTabletWatch(dispositvos);
+                                
+                                administraciones.add(new Administracion(adminDispositivo03, 
+                                        adminNombre03, campoEditar03, nuevoValor03));                                
                                 Administracion.actualizar(administraciones);
 
                                 break;

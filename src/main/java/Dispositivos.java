@@ -274,5 +274,45 @@ public class Dispositivos {
             e.printStackTrace();
         }
     }
+    
+    public static void listarAuriculares() {
+        try {
+            List<Dispositivos> dispositivos = new ArrayList<>(); // Lista donde guardaremos los datos del archivo
+
+            CsvReader leerDispositivos = new CsvReader(ARCHIVO_DISPOSITIVOS);
+            leerDispositivos.readHeaders();
+
+            // Mientras haya lineas obtenemos los datos del archivo
+            while (leerDispositivos.readRecord()) {
+                String tipoDispositivo = leerDispositivos.get(0);
+                String noTelefono = leerDispositivos.get(1);
+                String dispoAsociado = leerDispositivos.get(2);
+                String email = leerDispositivos.get(3);
+                String nombreDispositivo = leerDispositivos.get(4);
+                String visible = leerDispositivos.get(5);
+
+                dispositivos.add(new Dispositivos(tipoDispositivo, noTelefono,
+                        dispoAsociado, email, nombreDispositivo, visible)); // Añade la informacion a la lista
+            }
+
+            leerDispositivos.close(); // Cierra el archivo
+
+            String letra = "auriculares";
+            int contador = 0;
+            // Recorremos la lista y la mostramos en la pantalla
+            for (Dispositivos dispo : dispositivos) {
+                contador++;
+                if (dispo.getTipoDispositivo().equalsIgnoreCase(letra)) {
+                    System.out.println(contador + ". " + dispo.getNombreDispositivo() + ",\t"
+                            + dispo.getVisible());
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
