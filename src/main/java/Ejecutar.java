@@ -597,8 +597,69 @@ public class Ejecutar {
                     } while (opcionSubMenu != SALIR);
 
                     break;
-
+                    
+        //ACCIONES DISPOSITIVOS
                 case ACCIONES_DISPOSITIVO:
+                    
+                    do {
+                        do {
+                            mostrarMenuCreacionDispositivos("Dispositivos");
+                            opcionSubMenu = capturarNumeroEntero("Digite la Operacion a realizar");
+
+                            if (opcionSubMenu < SALIR || opcionSubMenu > AURICULARES) {
+                                mostrarMensaje("MENSAJE: Debe digitar un valor entre 0 y 5.");
+                                continuar();
+                            }
+
+                        } while (opcionSubMenu < SALIR || opcionSubMenu > AURICULARES);
+
+                        if (opcionSubMenu == SALIR) {
+                            break;
+                        }
+
+                        switch (opcionSubMenu) {
+
+                            case COMPUTADORAS:
+
+                                System.out.println();
+                                System.out.println("--- TOMAR FOTOGRAFIA ---\n");
+
+                                Acciones.verificarSmartphone();
+                                
+                                List<Dispositivos> dispositivos01 = new ArrayList<>(); // Lista donde guardaremos los datos del archivo
+
+                                CsvReader leerDispositivos01 = new CsvReader(ARCHIVO_DISPOSITIVOS);
+                                leerDispositivos01.readHeaders();
+
+                                // Mientras haya lineas obtenemos los datos del archivo
+                                while (leerDispositivos01.readRecord()) {
+                                    String tipoDispositivo0 = leerDispositivos01.get(0);
+                                    String noTelefono0 = leerDispositivos01.get(1);
+                                    String dispoAsociado0 = leerDispositivos01.get(2);
+                                    String email0 = leerDispositivos01.get(3);
+                                    String nombreDispositivo0 = leerDispositivos01.get(4);
+                                    String visible0 = leerDispositivos01.get(5);
+
+                                    dispositivos01.add(new Dispositivos(tipoDispositivo0, noTelefono0,
+                                            dispoAsociado0, email0, nombreDispositivo0, visible0)); // Añade la informacion a la lista
+                                }
+
+                                leerDispositivos01.close(); // Cierra el archivo
+                                
+                                String tipoDispositivo011 = null;
+                                String nombreDispositivo = null;
+                                String accion011 = "Tomar fotografia";
+                                String nombreFoto = capturarCadenaCaracteres("Asignele nombre de la fotografia");
+                                
+
+                                
+                                break;
+
+                            
+                        }
+
+                        continuar();
+                    } while (opcionSubMenu != SALIR);
 
                     break;
 
